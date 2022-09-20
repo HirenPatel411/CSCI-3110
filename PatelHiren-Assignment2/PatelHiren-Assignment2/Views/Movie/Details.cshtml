@@ -1,0 +1,78 @@
+﻿@model PatelHiren_Assignment2.Models.Entities.Movie
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Movie</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MovieName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MovieName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Genre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ReleaseDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ReleaseDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+    <h4>Actors</h4>   
+     <a asp-action="Create" asp-controller="Actor" asp-route-id="@Model.Id">        
+         Add Actor    
+     </a>    
+     <table class="table">        
+     <thead>            
+         <tr>                
+             <th>                    
+                 Id                
+             </th>                
+             <th>                    
+                 Name                
+             </th>                
+             <th></th>            
+         </tr>        
+     </thead>        
+     <tbody>            
+         @foreach (var actor in Model.Actors)            
+         {                
+             <tr>                    
+                 <td>                        
+                     @actor.Id
+                     </td>
+                     <td>                        
+                         @actor.FirstName @actor.LastName                    
+                     </td>                    
+                     <td>                       
+                         <a asp-action="Edit" asp-controller="Actor"                   
+                     asp-route-id="@Model.Id" asp-route-actorId="@actor.Id">Edit</a> |                        
+                         <a asp-action="Delete" asp-controller="Actor"                   
+                     asp-route-id="@Model.Id" asp-route-actorId="@actor.Id">Delete</a>                    
+                      </td>                
+                    </tr>            
+          }        
+     </tbody>    
+     </table>

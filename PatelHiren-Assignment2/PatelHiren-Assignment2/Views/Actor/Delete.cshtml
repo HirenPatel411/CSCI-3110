@@ -1,0 +1,31 @@
+﻿@using PatelHiren_Assignment2.Models.Entities
+@model Actor
+
+@{
+    var movie = (Movie?)ViewData["Movie"];
+    if (movie == null) movie = new();
+    ViewData["Title"] =
+       $"Deleting actor for {movie.MovieName} {movie.Genre} {movie.ReleaseDate}";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Actor</h4>
+    <hr />
+    <dl class="row">
+        
+    </dl>
+    
+    <form asp-action="Delete">
+        @if (Model != null)
+        {
+            <input asp-for="Id" type="hidden" value="@Model.Id" />
+            <input name="movieId" value="@movie.Id" type="hidden" />
+            <input type="submit" value="Delete" class="btn btn-danger" />
+        }
+        <a asp-action="Details" asp-controller="Movie"
+           asp-route-id="@movie.Id">Back to Movie Details</a>
+    </form>
+</div>
