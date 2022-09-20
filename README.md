@@ -15,6 +15,6 @@ Assignment 1 - This assignment demostrates that I can use enumeration type, clas
 
 Assignment 2 - This assignment shows that I understand one-to-many relationships and have demonstrated by the database having one movie correlated to many actors.
 
-Assignment 3 - This assignment shows that I understand many-to-many relationships and have demonstrated by the database having many gym members correlated to many classes taken by said gym members.
+Assignment 3 (seperate branch) - This assignment shows that I understand many-to-many relationships and have demonstrated by the database having many gym members correlated to many classes taken by said gym members.
 
 Assignment 4 (Not uploaded) - This assignment is an extension of assignment 3 and it demonstrates CRUD in JSON.
